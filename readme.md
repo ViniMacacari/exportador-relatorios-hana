@@ -21,7 +21,7 @@ Este projeto permite consultar dados diretamente de um banco de dados (HANA) e e
    git clone [LINK DESTE REPOSITORIO]
 2. **Crie um arquivo .env**:
    ```powershell
-   cd ExportarExecl
+   cd [NOME DO REPOSITORIO]
    echo. > .env
 3. **Adicione as variáveis de ambiente**:
     ```node .env
