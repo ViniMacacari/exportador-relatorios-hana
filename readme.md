@@ -35,3 +35,9 @@ Este projeto permite consultar dados diretamente de um banco de dados (HANA) e e
 5. **Verifique o resultado em**:
    ```powershell
     /out/
+
+### Criador do Projeto
+
+- Vinícius Macacari
+- [LinkedIn](https://www.linkedin.com/in/vinicius-macacari-de-almeida-bb7855243/)
+- macacarivinicius@gmail.com
