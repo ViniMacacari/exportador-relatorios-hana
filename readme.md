@@ -18,10 +18,10 @@ Este projeto permite consultar dados diretamente de um banco de dados (HANA) e e
 
 1. **Clone o repositório**:
    ```bash
-   git clone [LINK DESTE REPOSITORIO]
+   git clone [https://github.com/ViniMacacari/exportador-relatorios-hana.git]
 2. **Crie um arquivo .env**:
    ```powershell
-   cd [NOME DO REPOSITORIO]
+   cd [exportador-relatorios-hana]
    echo. > .env
 3. **Adicione as variáveis de ambiente**:
     ```node .env
