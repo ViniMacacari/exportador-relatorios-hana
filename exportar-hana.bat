@@ -1,3 +1,3 @@
 @echo off
-call tsx --max-old-space-size=16384 exportar.ts
+call tsx --max-old-space-size=32768 exportar.ts
 pause

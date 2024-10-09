@@ -2,10 +2,10 @@ import readline from "readline"
 import ConsultaHana from "./services/consultas/consulta-hana.js"
 import ExportarExcel from "./services/excel/excel.js"
 
-console.log("Este script requer de 16gb de memória RAM.")
+console.log("Este script requer no mínimo 8gb de memória RAM, 16gb são recomendados.")
 
-if (process.execArgv.indexOf('--max-old-space-size=16384') === -1) {
-    process.execArgv.push('--max-old-space-size=16384')
+if (process.execArgv.indexOf('--max-old-space-size=32768') === -1) {
+    process.execArgv.push('--max-old-space-size=32768')
 }
 
 const rl = readline.createInterface({

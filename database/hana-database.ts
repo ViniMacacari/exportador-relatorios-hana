@@ -63,7 +63,7 @@ class HanaDatabase {
                     clearInterval(interval)
                     progressBar.stop()
                 }
-            }, 2)
+            }, 100)
 
             this.connection.exec(query, params, (err: Error | null, result: T[]) => {
                 clearInterval(interval)

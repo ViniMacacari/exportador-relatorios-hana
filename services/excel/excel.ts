@@ -123,7 +123,7 @@ class ExportarExcel {
                 progressBarSalvar.update(currentProgress)
             }
             if (currentProgress < 99) {
-                setTimeout(incrementProgress, 50)
+                setTimeout(incrementProgress, 10)
             } else {
                 progressBarSalvar.stop()
             }
@@ -141,7 +141,9 @@ class ExportarExcel {
         progressBarSalvar.update(100)
         progressBarSalvar.stop()
 
-        console.log(`Arquivo salvo em: ${caminhoFinal}`)
+        setTimeout(() => {
+            console.log(`Arquivo salvo em: ${caminhoFinal}`)  
+        }, 1000)
     }
 }
 
