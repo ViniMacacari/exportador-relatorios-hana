@@ -63,7 +63,11 @@ class ExportarExcel {
             const linha = planilha.getRow(i + 1)
             linha.eachCell((celula) => {
                 if (typeof celula.value === 'number') {
-                    celula.numFmt = '#,##0.00'
+                    if (Number.isInteger(celula.value)) {
+                        celula.numFmt = '0';
+                    } else {
+                        celula.numFmt = '#,##0.00';
+                    }
                 }
 
                 celula.border = {
@@ -81,8 +85,8 @@ class ExportarExcel {
 
         console.log('Formatação da planilha concluída!')
 
-        planilha.columns.forEach(col => {
-            if (!col.values || col.values.length === 0) {
+        planilha.columns.forEach((col) => {
+            if (!col || !col.values || col.values.length === 0) {
                 col.width = 10
                 return
             }
@@ -95,6 +99,16 @@ class ExportarExcel {
                 }, 0)
 
             col.width = maxLength > 0 ? maxLength + 2 : 10
+
+            let hasDecimal = col.values.some((val: any) => typeof val === 'number' && !Number.isInteger(val))
+
+            if (col.eachCell) {
+                col.eachCell({ includeEmpty: true }, (cell) => {
+                    if (typeof cell.value === 'number') {
+                        cell.numFmt = hasDecimal ? '#,##0.00' : '0'
+                    }
+                })
+            }
         })
 
         const caminho = path.resolve('./out')
@@ -142,7 +156,7 @@ class ExportarExcel {
         progressBarSalvar.stop()
 
         setTimeout(() => {
-            console.log(`Arquivo salvo em: ${caminhoFinal}`)  
+            console.log(`Arquivo salvo em: ${caminhoFinal}`)
         }, 1000)
     }
 }
